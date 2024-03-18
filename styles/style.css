@@ -1,0 +1,887 @@
+* {
+    box-sizing: border-box;
+    /*It is recommended to set margin and pading to 0 at the start of the project:display: 
+    margin: 0;
+    padding: 0; 
+    */
+}
+/*Breakpoint: 576px+*/
+@media (min-width: 36em) {
+
+}
+/*Breakpoint: 768px+*/
+@media (min-width: 48em) {
+
+}
+/*Breakpoint: 992px+*/
+@media (min-width: 62em) {
+
+}
+/*Breakpoint: 1200px+*/
+@media (min-width: 75em) {
+
+}
+/*Breakpoint: 1400px+*/
+@media (min-width: 87.5em) {
+
+}
+html {
+    font-size: 1em;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+@media (min-width: 62em) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.button {
+    display: inline-block;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 99999px;
+    border: none;
+    background-color: #ED6A4E;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.button:hover {
+    background-color: #823929;
+}
+/*Element modifier*/
+.button--transparent { 
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0.25rem);     /*-webkit- prefix is the most common one. 
+    It is used if the browser doesn't support an property yet. You can check if a property is available for different
+    web browsers by using the page caniuse.com*/
+    backdrop-filter: blur(0.25rem);     /*The backdrop-filter property affects area behind the element, not the element itself.*/
+    border: 0.125rem solid white;
+}
+.button--transparent:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.button--story {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.85rem;
+}
+.button--guide {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.button--form {
+
+    background-color: #014153;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+.button--form:hover {
+    background-color: #012834;
+}
+
+.text-primary {
+    color: #ED6A4E;
+}
+
+.desktop-only {
+    display: none;  /*Mobile first*/
+}
+@media (min-width: 62em) {
+    .desktop-only {
+        display: initial;   /*Sets back the initial property*/
+    }
+}
+
+input.form__input[type="text"],
+input.form__input[type="email"],
+textarea.form__input,
+input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form__input {
+    font-family: inherit;
+    width: 100%;
+    text-align: center;
+    resize: none;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem 0.5rem;
+    background-color: white;
+    border: 0.125rem solid white;
+    border-radius: 0.4rem;
+}
+
+
+.form__input:focus {
+    border: 0.125rem solid gray;
+    outline: none;      /*Turns off the default browser border of the field*/
+}
+
+.form__input--textarea {
+    height: 6rem;
+}
+
+.form__input-container {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.contact__form-submit-container {
+    text-align: center;
+}
+@media (min-width: 62em) {
+    .contact__form-submit-container {
+        text-align: right;
+    }
+}
+
+
+.header {
+    background-image: url("../images/header/header-background-0.5x.jpg");       /*We are developing the mobile first firstly*/
+    background-repeat: no-repeat;
+    background-size: cover;     /*Zoom in in this picture until the whole element is covered*/
+    background-position: 50% 75%;
+    padding-bottom: 2rem;
+}
+/*Breakpoint: 992px+*/
+@media (min-width: 62em) {
+    .header {
+        background-image: url("../images/header/header-background.jpg");    /*If the screen size is 900px and above, load the bigger image*/
+    }
+}
+.header::after {        /*Pseudo-element*/
+    content: "";
+    display: block;
+    width: 7.5rem;
+    height: 0.15rem;
+    background-color: #ED6A4E;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+    
+}
+@media (min-width: 62em) {
+    .header::after {
+        width: 12.5rem;
+    }
+}
+
+.header__logo-link {    /*With this class we are setting the position of our logo.*/
+    display: block;
+    width: 9rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Breakpoint: 992px+*/
+@media (min-width: 62em) {
+    .header__logo-link {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.header__logo {
+    width: 100%;    /*The logo takes the 100% of the size of the parent element, which is header__logo-link*/
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));     /*filter properties are used for image styling!!*/
+}
+
+.header__nav-ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header__nav-link {
+    display: inline-block;  /*With inline-block property the elements are lined up as in inline, and still can be shaped like a block.*/
+    padding: 1rem 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);   /*The text itself has now a light shadow, not the box like in box-shadow.*/
+}
+
+.header__nav-li {
+    display: inline-block;
+    list-style-type: none;  /*This property is for defining what should be displayed infront of the ul.*/
+}
+.header__nav-li--desktop-only {     /*This modifier allows us to hide this list-element, as we are developing mobile first design.*/
+    display: none;
+}
+@media (min-width: 62em) {
+    .header__nav-li--desktop-only {
+        display: inline-block;
+    }
+}
+
+.header__nav {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+@media (min-width: 62em) {
+    .header__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.header__heading {
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    mix-blend-mode: overlay;    /*Property of blending in with the background*/
+}
+@media (min-width: 36em) {
+    .header__heading {
+        font-size: 3em;
+    }
+}
+@media (min-width: 62em) {
+    .header__heading {
+        padding-top: 5rem;
+    }
+}
+
+.header__sub-heading {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 36em) {
+    .header__sub-heading {
+        font-size: 1.25rem;;
+    }
+}
+@media (min-width: 62em) {
+    .header__sub-heading {
+        padding-bottom: 7.5rem;
+    }
+}
+.header__button-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+@media (min-width: 62em) {
+    .header__button-container {
+        display: none;
+    }
+}
+
+.heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    color: #014153;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;  /*In comparison to the font-size, that's why em.*/
+    padding: 2rem 0;
+}
+.heading--centered {
+    text-align: center;
+}
+.heading--small {
+    font-size: 1.5rem;
+}
+.heading--white {
+    color: white;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+.heading--top-box::before {
+    content: "";
+    display: block;
+    width: 7.5rem;
+    height: 0.15rem;
+    background-color: #ED6A4E;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+.heading--bottom-box::after {
+    content: "";
+    display: block;
+    width: 7.5rem;
+    height: 0.15rem;
+    background-color: #ED6A4E;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+}
+.heading__pre-text {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.adventures {
+    background-image: url("../images/adventures/background.jpg");
+    background-color: rgb(225, 220, 206);       /*Fall back if the image doesn't load*/
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;     /*Zoom in in picture if it isn't large enough to display the whole element.*/
+    padding-bottom: 4rem;
+}
+/*
+.advetures__paragraph {
+    display: block;
+    color: rgb(17, 74, 78);
+    size: 1rem;
+    margin: 0;
+    padding-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+@media (min-width: 62em) {
+    .advetures__paragraph {
+        padding-top: 5rem;
+    }
+}
+.adventures__heading {
+    display: block;
+    color: rgb(17, 74, 78);
+    size: 2.5rem;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+*/
+
+.adventures__card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -1rem;     /*This is important so our card can be on the vertical line of our site.*/
+    margin-right: -1rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+/*
+@media (min-width: 62em) {
+    .adventures__card-container {
+        flex-direction: row;
+    }
+}
+*/
+.adventures__card {
+    position: relative; /*Important for the positioning of the individual card which has to be absolute*/
+    background-color: rgb(255, 255, 255);
+    /*width: 30rem;
+    Instead of width we can use the flex command flex: do not grow - do not shrink - wanted width is 
+    21.6666rem(container width:75rem - container padding left and right 2rem = 71rem / 3 = 23.6666rem - 1rem margin left&right)*/
+    flex: 0 0 22.333333rem;    
+    /*height: 40rem; 
+    Because it is in a flexbox, it computates the height for all its elements equally. Therefore we don't need
+    to set the height manually.*/
+    margin: 1rem;
+    
+    border-radius: 0.75rem;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+    
+    will-change: transform;
+    transform: scale(1);
+    transition: transform 0.4s ease-in-out;
+}
+.adventures__card:hover {
+    transform: scale(1.05);
+}
+
+.adventures__card-picture {
+    display: block;     /*A picture is normally inline-block element and therefore there would be a small gap 
+                        between the picture and the heading beneath. Therefore we will set it to block.*/
+    width: 100%;        /*100% from parent element and the height is then determined based on the aspect ratio*/
+    height: 27rem;  /*If it is necessary to set a fixed height, we also have to work with the position*/
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+.adventures__card-bottom {
+    position: absolute;     /*To overlap it with our card-picture*/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.25rem);
+}
+
+.adventures__card-heading {
+    margin: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.adventures_card-date {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+
+.story {
+    background-image: url("../images/story/background-mobile.jpg");       /*We are developing the mobile first design*/
+    background-repeat: no-repeat;
+    background-size: cover;     /*Zoom in in this picture until the whole element is covered*/
+    background-position: center center;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+/*Breakpoint: 992px+*/
+@media (min-width: 62em) {
+    .story {
+        background-image: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.5) 100%),
+        url("../images/story/background-desktop.jpg");    /*If the screen size is 900px and above, load the bigger image*/
+        background-size: 110% auto; /*On the x axis zoom in by 10%*/
+        background-position: 100% 50%;
+        background-attachment: local, fixed;
+        background-repeat: no-repeat;
+    }
+
+    .story__inner {
+        padding-left: 50%;
+    }
+}
+
+.story__paragraph {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.4em;
+    color: white;
+    padding-bottom: 1.5rem;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.parts {
+    padding-bottom: 3.5rem;
+}
+.parts::after {
+    content: "";
+    display: block;
+    width: 7.5rem;
+    height: 0.15rem;
+    background-color: #ED6A4E;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.parts__paragraph {
+    display: block;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.4em;
+    color: #014153;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: 35rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parts__items-outer {
+    overflow: hidden;   /* + negative margin to hide the double borders.*/
+}
+.parts__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;    /*Allow line breaks*/
+    /*We use px as a unit here to prevent rounding issue
+    as this causes a white space to appear within the 
+    outer border.
+    */
+    /*border: 1px solid #ED6A4E;*/
+    margin: -1px;   /*We have now defined a div around this flex box so that we can "hide" the double border
+                    which are overlapping due to the individual item boxes. */
+}
+
+.parts__item {
+    
+    flex: 1 0 20rem;    /*it may grow | do not shrink | minimum width 20rem*/
+    padding: 1.5rem;;
+    /*We use px as a unit here to prevent rounding issue
+    as this causes a white space to appear within the 
+    outer border.
+    */
+    border: 1px solid #ED6A4E;
+    text-decoration: none;
+}
+.parts__item:hover {
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;  /*To animates the cursor while hovering over a box*/
+}
+
+.parts__item-icon-container { /*<div> element == block element*/
+    width: 5rem;
+    height: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 9999px;
+    /*clip-path: circle(50%);*/
+    background-color: #ED6A4E;
+    padding-top: 1rem;
+}
+
+.parts__item-icon {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parts__item-heading {
+    margin: 0;
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    color:#014153;
+    text-align: center;
+}
+
+.guide {
+    padding-top: 10rem;
+    
+    background-image: 
+        linear-gradient(90deg, rgba(36, 161, 163, 0.25), rgba(36, 161, 163, 0.25)),   /*Layer to brighten up layers underneath*/
+        url("../images/guide/pexels-arnie-chou-927414.jpg"),
+        linear-gradient(90deg, #014153, #014153),       /*The layer over the picture on the right side*/
+        url("../images/guide/pexels-minmin-kp-2554603.jpg");
+    background-size: 
+        100% calc(100% - 10rem),
+        100% calc(100% - 10rem),
+        100% calc(100% - 10rem),
+        100% auto;
+    background-position: 
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        50% calc(5rem - 82vw);
+    background-repeat: 
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-blend-mode: 
+        normal, 
+        saturation,     /*The second and the third layer (the picture on right + linear-gradient) melt together. 
+                        The first is just to brighten up the result. The third should stay normal.*/
+        normal;
+}
+@media (min-width: 62em) {
+    .guide {
+        padding-top: 0;
+        background-size: 
+            calc(50% + 10rem) 100%, 
+            calc(50% + 10rem) 100%, /*60% width*/
+            calc(50% + 10rem) 100%, 
+            calc(50% - 10rem) auto;
+        background-position: 
+            100% 50%,
+            100% 50%,
+            100% 50%,   
+            0% 50%;
+    }
+    .guide__container {
+        padding-top: 1rem;
+        padding-left: calc(50% - 7rem);
+    }
+}
+
+.guide__paragraph {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.4em;
+    color: white;
+    padding-bottom: 1.5rem;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.guide__button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+@media (min-width: 62em) {
+    .guide__button-container {
+        display: block;
+        padding-top: 0rem;
+    }
+}
+
+.skill {
+    background-image: url("../images/adventures/background.jpg");
+    background-color: rgb(225, 220, 206);       /*Fall back if the image doesn't load*/
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;     /*Zoom in in picture if it isn't large enough to display the whole element.*/
+    padding-bottom: 4rem;
+}
+
+.skill__card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -1rem;     /*This is important so our card can be on the vertical line of our site.*/
+    margin-right: -1rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+
+.skill__card {
+    background-color: rgb(255, 255, 255);
+    /*width: 30rem;
+    Instead of width we can use the flex command flex: do not grow - do not shrink - wanted width is 
+    21.6666rem(container width:75rem - container padding left and right 2rem = 71rem / 3 = 23.6666rem - 1rem margin left&right)*/
+    flex: 0 0 22.333333rem;    
+    /*height: 40rem; 
+    Because it is in a flexbox, it computates the height for all its elements equally. Therefore we don't need
+    to set the height manually.*/
+    margin: 1rem;
+    padding: 2rem;
+    
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+    
+    will-change: transform;
+    transform: scale(1);
+    transition: transform 0.4s ease-in-out;
+}
+.skill__card:hover {
+    transform: scale(1.05);
+}
+
+.skill__card-icon-container {
+    display: inline-block;
+    color: #014153;
+    background-color: #ED6A4E;
+    padding: 1rem;
+    border-radius: 99999px;
+    font-size: 4rem;
+}
+.skill__item-icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+}
+
+.skill__card-list {
+    padding: 0;
+    margin: 0;
+    color: #014153;
+    /*list-style-position: inside;    Places list markers on the even vertical line of the card container*/
+    list-style-type: none;
+}
+
+.skill__card-list-item {
+    letter-spacing: 0.12em;
+    padding-bottom: 0.8rem;
+}
+.skill__card-list-item::before {
+    content: "";
+    display: inline-block;
+    background-color: currentColor;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 99999px;
+    position: relative;
+    top: -0.2em;
+    margin-right: 0.5em;
+}
+
+.quote {
+    background-color: #014153;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color: #ED6A4E;
+}
+
+.quote__figure {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    text-align: center;
+}
+
+.quote__blockquote {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+}
+
+.quote__paragraph {
+    margin: 0;
+}
+.quote__paragraph::before {
+    content: "„";
+}
+.quote__paragraph::after {
+    content: "“";
+}
+
+.quote__figcaption {
+    padding: 0;
+    
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.quote__cite {
+    font-style: normal;
+}
+
+.contact {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background-color: #ED6A4E;
+}
+@media (min-width: 62em) {
+    .contact::after {
+        content: "";
+        display: block;
+        width: 7.5rem;
+        height: 0.15rem;
+        background-color:#014153;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.contact__logo {
+    display: block;
+    width: 17rem;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;   /*Not transparancy, but visibility*/
+}
+
+.contact__info-text {
+    margin: 0;
+    padding-top: 2.8rem;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.contact__phone {
+    display: inline-block;  /*If we made it a block element, the call up function would be across full width.
+                            And because we want it to be center, we have to defie a div around it*/
+    padding: 1rem;
+    color:#014153;
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.contact__phone-container {
+    display: block;
+    text-align: center;
+}
+
+.contact__info::after {
+    content: "";
+    display: block;
+    width: 7.5rem;
+    height: 0.15rem;
+    background-color:#014153;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 62em) {
+    .contact__info::after {
+        content: none;
+    }
+}
+
+@media (min-width: 62em) {
+    .contact__desktop {
+        display: flex;
+        flex-direction: row;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        background-image: 
+            linear-gradient(90deg, 
+            transparent calc(50% - 0.1rem), 
+            rgba(255, 255, 255, 0.5) calc(50% - 0.1rem), 
+            rgba(255, 255, 255, 0.5) calc(50% + 0.1rem), 
+            transparent calc(50% + 0.1rem));
+    }
+}
+
+.contact__form {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 62em) {
+    .contact__form {
+        flex: 0 0 50%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        max-width: initial;
+        margin-left: initial;
+        margin-right: initial;
+    }
+}
+
+@media (min-width: 62em) {
+    .contact__info {
+        flex: 0 0 50%;
+    }
+}
+
+.footer {
+    background-color: #ED6A4E;
+    padding-bottom: 2rem;
+}
+
+.footer__text {
+    margin: 0;
+    color: #014153;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.footer__link {
+    color: #014153;
+    text-decoration: none;
+}
+.footer__link:hover {
+    text-decoration: underline;
+}
